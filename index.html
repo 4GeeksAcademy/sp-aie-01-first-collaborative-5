@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Atelier | Vista de producto</title>
+    <meta
+      name="description"
+      content="Descubre el blazer estructurado Maison Atelier: elegancia francesa, materiales premium y ajuste cómodo para ocasiones formales y casuales."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://maisonatelier.com/producto/blazer-structura" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Blazer Structura Atelier",
+        "image": "https://maisonatelier.com/assets/producto-atelier.svg",
+        "description": "Blazer estructurado de corte recto con acabado premium para uso urbano, oficina y eventos semiformales.",
+        "sku": "MA-BZ-2407",
+        "brand": {
+          "@type": "Brand",
+          "name": "Maison Atelier"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://maisonatelier.com/producto/blazer-structura",
+          "priceCurrency": "EUR",
+          "price": "189.00",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition"
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-ivory text-ink antialiased">
+    <div class="page-ambient min-h-screen">
+      <header class="border-b border-ink/10 bg-white/70 backdrop-blur-md">
+        <nav
+          class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6"
+          aria-label="Principal"
+        >
+          <a href="#" class="brand-title text-2xl tracking-wide text-ink">Maison Atelier</a>
+          <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
+            <li><a href="#" class="menu-link">Home</a></li>
+            <li><a href="#" class="menu-link">Catálogo</a></li>
+            <li><a href="#" class="menu-link">Carrito</a></li>
+            <li><a href="#" class="menu-link">Checkout</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:py-12">
+        <section
+          aria-labelledby="nombre-producto"
+          class="overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-xl shadow-ink/5"
+          itemscope
+          itemtype="https://schema.org/Product"
+        >
+          <div class="grid gap-0 lg:grid-cols-2">
+            <article class="relative border-b border-ink/10 bg-sand/65 p-5 sm:p-8 lg:border-b-0 lg:border-r">
+              <h2 class="sr-only">Foto del producto</h2>
+              <figure class="overflow-hidden rounded-2xl border border-ink/10 bg-white shadow-lg shadow-ink/10">
+                <img
+                  src="assets/producto-atelier.svg"
+                  alt="Blazer estructurado color terracota de Maison Atelier"
+                  class="h-full w-full object-cover"
+                  itemprop="image"
+                  loading="eager"
+                />
+              </figure>
+              <p class="mt-4 text-sm text-ink/70">Vista frontal del diseño con caída recta y solapa clásica.</p>
+            </article>
+
+            <article class="p-6 sm:p-8 lg:p-10">
+              <p class="text-xs uppercase tracking-[0.18em] text-gold">Edición Atelier</p>
+              <h1 id="nombre-producto" class="headline mt-3 text-4xl leading-tight text-ink sm:text-5xl" itemprop="name">
+                Blazer Structura Atelier
+              </h1>
+
+              <dl class="mt-6 space-y-3 text-sm sm:text-base">
+                <div class="flex items-center justify-between gap-3 border-b border-ink/10 pb-3">
+                  <dt class="text-ink/65">Código</dt>
+                  <dd class="font-semibold text-ink" itemprop="sku">MA-BZ-2407</dd>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-ink/10 pb-3">
+                  <dt class="text-ink/65">Talla</dt>
+                  <dd class="font-semibold text-ink">M</dd>
+                </div>
+                <div
+                  class="flex items-center justify-between gap-3 border-b border-ink/10 pb-3"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="https://schema.org/Offer"
+                >
+                  <dt class="text-ink/65">Precio</dt>
+                  <dd class="text-2xl font-bold text-red-accent">
+                    €<span itemprop="price">189.00</span>
+                  </dd>
+                  <meta itemprop="priceCurrency" content="EUR" />
+                  <link itemprop="availability" href="https://schema.org/InStock" />
+                </div>
+              </dl>
+
+              <form class="mt-7 space-y-5" aria-label="Configuración de compra">
+                <div>
+                  <label for="cantidad" class="mb-2 block text-sm font-semibold text-ink">Cantidad</label>
+                  <div class="inline-flex items-center overflow-hidden rounded-full border border-ink/20">
+                    <button
+                      type="button"
+                      class="qty-btn"
+                      aria-label="Restar una unidad"
+                      onclick="const i=document.getElementById('cantidad'); i.stepDown();"
+                    >
+                      -
+                    </button>
+                    <input
+                      id="cantidad"
+                      name="cantidad"
+                      type="number"
+                      min="1"
+                      max="10"
+                      value="1"
+                      class="qty-input"
+                    />
+                    <button
+                      type="button"
+                      class="qty-btn"
+                      aria-label="Sumar una unidad"
+                      onclick="const i=document.getElementById('cantidad'); i.stepUp();"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                <button type="submit" class="cta-button w-full rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] sm:w-auto">
+                  Agregar al carrito
+                </button>
+              </form>
+            </article>
+          </div>
+        </section>
+
+        <section
+          aria-labelledby="descripcion-detallada"
+          class="mt-10 rounded-3xl border border-ink/10 bg-white/90 p-6 shadow-lg shadow-ink/5 sm:p-8"
+        >
+          <h2 id="descripcion-detallada" class="headline text-3xl text-ink">Descripción detallada</h2>
+          <div class="mt-6 grid gap-6 md:grid-cols-2">
+            <article class="rounded-2xl bg-muted p-5">
+              <h3 class="text-lg font-semibold text-ink">Materiales</h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink/80" itemprop="description">
+                Tejido exterior en lana peinada (70%), viscosa reciclada (20%) y elastano (10%).
+                Forro interior transpirable con acabado suave para uso prolongado.
+              </p>
+            </article>
+            <article class="rounded-2xl bg-muted p-5">
+              <h3 class="text-lg font-semibold text-ink">Uso recomendado</h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink/80">
+                Ideal para oficina creativa, cenas semiformales, reuniones ejecutivas o estilo urbano
+                premium con denim oscuro y calzado minimalista.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="mt-12 border-t border-ink/10 bg-white/80">
+        <div class="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-sm text-ink/70 sm:flex-row sm:px-6">
+          <p>Maison Atelier · Moda francesa contemporánea</p>
+          <p>© 2026 Todos los derechos reservados</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

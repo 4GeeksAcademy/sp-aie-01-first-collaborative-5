@@ -1,0 +1,131 @@
+:root {
+  --brand-ink: #111827;
+  --brand-sand: #f5efe5;
+  --brand-red: #c2412d;
+  --brand-gold: #b48b46;
+  --surface-white: #ffffff;
+  --surface-muted: #f8fafc;
+}
+
+.bg-ivory {
+  background-color: #fffdf8;
+}
+
+.bg-sand {
+  background-color: var(--brand-sand);
+}
+
+.bg-muted {
+  background-color: var(--surface-muted);
+}
+
+.text-ink {
+  color: var(--brand-ink);
+}
+
+.text-gold {
+  color: var(--brand-gold);
+}
+
+.text-red-accent {
+  color: var(--brand-red);
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+.headline,
+.brand-title {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.page-ambient {
+  background:
+    radial-gradient(circle at 12% 10%, rgb(196 65 45 / 8%), transparent 36%),
+    radial-gradient(circle at 85% 78%, rgb(180 139 70 / 12%), transparent 34%),
+    linear-gradient(160deg, #fff 0%, #fffcf8 48%, #f8fafc 100%);
+}
+
+.menu-link {
+  position: relative;
+  color: rgb(17 24 39 / 75%);
+  transition: color 0.25s ease;
+}
+
+.menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.28rem;
+  width: 100%;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--brand-red);
+  transition: transform 0.25s ease;
+}
+
+.menu-link:hover {
+  color: var(--brand-ink);
+}
+
+.menu-link:hover::after {
+  transform: scaleX(1);
+}
+
+.qty-btn {
+  padding: 0.65rem 1rem;
+  font-weight: 700;
+  color: rgb(17 24 39 / 78%);
+  background: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.qty-btn:hover {
+  background: rgb(17 24 39 / 7%);
+}
+
+.qty-input {
+  width: 4.2rem;
+  border: 0;
+  text-align: center;
+  font-weight: 600;
+  outline: none;
+}
+
+.cta-button {
+  color: var(--surface-white);
+  background: linear-gradient(135deg, #c2412d 0%, #ad3b2a 100%);
+  box-shadow: 0 10px 20px rgb(194 65 45 / 25%);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgb(194 65 45 / 30%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  main section {
+    animation: rise-in 0.65s ease both;
+  }
+
+  main section:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
