@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Maison Atelier</title>
+  <meta name="description" content="Checkout de Maison Atelier en 3 pasos: datos personales, direccion de entrega y pago con tarjeta.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://maison-atelier.example/checkout.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    :root {
+      --brand-ink: #111827;
+      --brand-sand: #F5EFE5;
+      --brand-red: #C2412D;
+      --brand-gold: #B48B46;
+      --surface-white: #FFFFFF;
+      --surface-muted: #F8FAFC;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+    }
+
+    .font-editorial {
+      font-family: "Playfair Display", serif;
+    }
+  </style>
+  <script type="application/ld+json" id="checkoutSchema">
+    {
+      "@context": "https://schema.org",
+      "@type": "CheckoutPage",
+      "name": "Finalizar compra",
+      "description": "Formulario checkout de tres pasos con datos personales, entrega y pago.",
+      "inLanguage": "es"
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-[var(--surface-white)] text-[var(--brand-ink)]">
+  <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_15%_10%,_#F8FAFC_0%,_transparent_35%),radial-gradient(circle_at_90%_80%,_#F5EFE5_0%,_transparent_45%)]"></div>
+  <div id="headerMount" data-include="header.html" class="border-b border-[#E5E7EB] bg-white/60">
+    <header class="mx-auto max-w-6xl px-4 py-4 text-center text-sm text-slate-500 sm:px-6 lg:px-8">
+      Placeholder Header (cargando header.html)
+    </header>
+  </div>
+
+  <div class="mx-auto flex min-h-[calc(100vh-180px)] max-w-6xl flex-col px-4 py-4 sm:px-6 lg:px-8">
+
+    <main class="flex-1 pb-6">
+      <section class="grid gap-4 lg:grid-cols-3">
+        <article class="rounded-2xl border border-[#E5E7EB] bg-white p-4 shadow-sm sm:p-6 lg:col-span-2">
+          <h1 class="font-editorial text-3xl font-bold tracking-tight sm:text-4xl">Finalizar compra</h1>
+          <p class="mt-1 text-sm text-slate-600">Flujo en 3 pasos con validación individual de campos.</p>
+
+          <ol class="mt-5 grid grid-cols-3 gap-2 text-xs sm:text-sm" id="stepsIndicator">
+            <li class="step-tag rounded-lg bg-[#C2412D] px-2 py-2 text-center font-semibold text-white" data-step="0">1. Datos personales</li>
+            <li class="step-tag rounded-lg bg-[#F8FAFC] px-2 py-2 text-center font-semibold text-[#111827]" data-step="1">2. Entrega</li>
+            <li class="step-tag rounded-lg bg-[#F8FAFC] px-2 py-2 text-center font-semibold text-[#111827]" data-step="2">3. Tarjeta</li>
+          </ol>
+
+          <form id="checkoutForm" class="mt-5 space-y-5" novalidate>
+            <input type="hidden" name="orderData" id="orderData">
+
+            <fieldset class="checkout-step space-y-4" data-step="0">
+              <legend class="font-editorial mb-1 text-xl font-bold">Datos personales</legend>
+              <div class="grid gap-3 sm:grid-cols-2">
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">Nombre</span>
+                  <input required minlength="2" name="nombre" autocomplete="given-name" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400" placeholder="Tu nombre">
+                </label>
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">Apellidos</span>
+                  <input required minlength="2" name="apellidos" autocomplete="family-name" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400" placeholder="Tus apellidos">
+                </label>
+              </div>
+
+              <label class="block">
+                <span class="mb-1 block text-sm font-medium">Email</span>
+                <input required type="email" name="email" autocomplete="email" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400" placeholder="tu@email.com">
+              </label>
+
+              <label class="block">
+                <span class="mb-1 block text-sm font-medium">Teléfono</span>
+                <input required type="tel" pattern="[0-9+ ]{9,15}" name="telefono" autocomplete="tel" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400" placeholder="600123123">
+              </label>
+            </fieldset>
+
+            <fieldset class="checkout-step hidden space-y-4" data-step="1">
+              <legend class="font-editorial mb-1 text-xl font-bold">Direccion de entrega</legend>
+
+              <label class="block">
+                <span class="mb-1 block text-sm font-medium">Dirección</span>
+                <input required minlength="5" name="direccion" autocomplete="street-address" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400" placeholder="Calle y número">
+              </label>
+
+              <div class="grid gap-3 sm:grid-cols-2">
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">Ciudad</span>
+                  <input required minlength="2" name="ciudad" autocomplete="address-level2" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400" placeholder="Ciudad">
+                </label>
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">Provincia</span>
+                  <input required minlength="2" name="provincia" autocomplete="address-level1" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400" placeholder="Provincia">
+                </label>
+              </div>
+
+              <div class="grid gap-3 sm:grid-cols-2">
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">Código postal</span>
+                  <input required pattern="[0-9]{5}" name="cp" autocomplete="postal-code" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400" placeholder="28001">
+                </label>
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">País</span>
+                  <input required minlength="2" name="pais" autocomplete="country-name" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400" placeholder="España">
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="checkout-step hidden space-y-4" data-step="2">
+              <legend class="font-editorial mb-1 text-xl font-bold">Pago con tarjeta</legend>
+
+              <label class="block">
+                <span class="mb-1 block text-sm font-medium">Titular de la tarjeta</span>
+                <input required minlength="4" name="titular" autocomplete="cc-name" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400" placeholder="Nombre como aparece en la tarjeta">
+              </label>
+
+              <label class="block">
+                <span class="mb-1 block text-sm font-medium">Número de tarjeta</span>
+                <input required inputmode="numeric" pattern="[0-9]{16}" name="numeroTarjeta" autocomplete="cc-number" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400" placeholder="1234123412341234">
+              </label>
+
+              <div class="grid gap-3 sm:grid-cols-2">
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">Caducidad (MM/AA)</span>
+                  <input required pattern="(0[1-9]|1[0-2])\/[0-9]{2}" name="caducidad" autocomplete="cc-exp" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400" placeholder="08/29">
+                </label>
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">CVV</span>
+                  <input required pattern="[0-9]{3,4}" name="cvv" autocomplete="cc-csc" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400" placeholder="123">
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="flex flex-wrap gap-2 pt-1">
+              <button id="prevBtn" type="button" class="hidden rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">Anterior</button>
+              <button id="nextBtn" type="button" class="rounded-lg bg-[#C2412D] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#9F3525]">Siguiente</button>
+              <button id="submitBtn" type="submit" class="hidden rounded-lg bg-[var(--brand-red)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#9F3525]">Pagar ahora</button>
+            </div>
+
+            <p id="formMsg" class="text-sm text-rose-600"></p>
+            <p id="successMsg" class="hidden rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700"></p>
+          </form>
+        </article>
+
+        <aside class="h-fit rounded-2xl border border-[#E5E7EB] bg-[var(--brand-sand)]/50 p-4 shadow-sm sm:p-6" itemscope itemtype="https://schema.org/Order">
+          <h2 class="font-editorial text-2xl font-bold">Resumen del pedido</h2>
+          <div id="checkoutItems" class="mt-4 space-y-3"></div>
+
+          <dl class="mt-4 space-y-2 border-t border-slate-200 pt-3 text-sm">
+            <div class="flex items-center justify-between">
+              <dt class="text-slate-600">Subtotal</dt>
+              <dd class="font-semibold" id="resumenSubtotal">0,00 €</dd>
+            </div>
+            <div class="flex items-center justify-between">
+              <dt class="text-slate-600">Impuestos (21%)</dt>
+              <dd class="font-semibold" id="resumenImpuestos">0,00 €</dd>
+            </div>
+            <div class="flex items-center justify-between border-t border-slate-200 pt-2 text-base">
+              <dt class="font-bold">Total</dt>
+              <dd class="font-black text-[var(--brand-red)]" id="resumenTotal">0,00 €</dd>
+            </div>
+          </dl>
+
+          <a href="carrito.html" class="mt-5 inline-flex w-full items-center justify-center rounded-lg border border-[#D1D5DB] px-4 py-2 text-sm font-semibold text-[var(--brand-ink)] transition hover:border-[var(--brand-gold)] hover:bg-[var(--brand-sand)]">Volver al carrito</a>
+        </aside>
+      </section>
+    </main>
+
+  </div>
+
+  <div id="footerMount" data-include="footer.html" class="mt-auto border-t border-[#E5E7EB] bg-white/70">
+    <footer class="mx-auto max-w-6xl px-4 py-4 text-center text-sm text-slate-500 sm:px-6 lg:px-8">
+      Placeholder Footer (cargando footer.html)
+    </footer>
+  </div>
+
+  <script src="layout.js" defer></script>
+  <script src="checkout.js" defer></script>
+</body>
+</html>
