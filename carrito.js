@@ -1,26 +1,6 @@
 const TAX_RATE = 0.21;
 const STORAGE_KEY = "mvp_cart_items";
-
-const productosDemo = [
-  {
-    id: "p1",
-    nombre: "Auriculares Pulse",
-    precio: 49.9,
-    miniatura: "https://placehold.co/80x80/f0f9ff/0f172a?text=AUD"
-  },
-  {
-    id: "p2",
-    nombre: "Teclado Compact Air",
-    precio: 69.5,
-    miniatura: "https://placehold.co/80x80/ecfeff/0f172a?text=TEC"
-  },
-  {
-    id: "p3",
-    nombre: "Mouse Orbit Pro",
-    precio: 39,
-    miniatura: "https://placehold.co/80x80/f0fdf4/0f172a?text=MOU"
-  }
-];
+const productos = Array.isArray(window.PRODUCTOS) ? window.PRODUCTOS : [];
 
 const catalogoEl = document.getElementById("catalogo");
 const listaCarritoEl = document.getElementById("listaCarrito");
@@ -58,7 +38,14 @@ function formatearEuros(valor) {
 }
 
 function renderCatalogo() {
-  catalogoEl.innerHTML = productosDemo
+  if (!catalogoEl) return;
+
+  if (productos.length === 0) {
+    catalogoEl.innerHTML = "<p class='rounded-lg bg-amber-50 p-3 text-sm text-amber-800'>No hay productos disponibles en este momento.</p>";
+    return;
+  }
+
+  catalogoEl.innerHTML = productos
     .map(
       (producto, index) => `
       <article class="rounded-xl border border-[#E5E7EB] bg-[#F8FAFC] p-3" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
@@ -141,7 +128,7 @@ function renderListaCarrito() {
 }
 
 function anyadirProducto(idProducto) {
-  const producto = productosDemo.find((p) => p.id === idProducto);
+  const producto = productos.find((p) => p.id === idProducto);
   if (!producto) return;
 
   const itemExistente = carrito.find((item) => item.id === idProducto);
@@ -168,7 +155,7 @@ function modificarCantidad(idProducto, delta) {
   renderListaCarrito();
 }
 
-catalogoEl.addEventListener("click", (evento) => {
+catalogoEl?.addEventListener("click", (evento) => {
   const boton = evento.target.closest("button[data-id]");
   if (!boton) return;
   anyadirProducto(boton.dataset.id);
