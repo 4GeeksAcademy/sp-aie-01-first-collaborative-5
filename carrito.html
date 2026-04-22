@@ -1,15 +1,19 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carrito | Maison Atelier</title>
-  <meta name="description" content="Carrito completo de Maison Atelier con listado de productos, totalización e inicio de checkout.">
+  <meta name="description"
+    content="Carrito completo de Maison Atelier con listado de productos, totalización e inicio de checkout.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://maison-atelier.example/carrito.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style>
     :root {
@@ -29,23 +33,25 @@
       font-family: "Playfair Display", serif;
     }
   </style>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ShoppingCart",
-      "name": "Carrito de compra",
-      "description": "Vista completa del carrito con listado de productos, subtotal, impuestos y total.",
-      "inLanguage": "es"
-    }
-  </script>
 </head>
+
 <body class="min-h-screen bg-[var(--surface-white)] text-[var(--brand-ink)]">
-  <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_20%_0%,_#F5EFE5_0%,_transparent_40%),radial-gradient(circle_at_85%_80%,_#F8FAFC_0%,_transparent_45%)]"></div>
-  <div id="headerMount" data-include="header.html" class="border-b border-[#E5E7EB] bg-white/60">
-    <header class="mx-auto max-w-6xl px-4 py-4 text-center text-sm text-slate-500 sm:px-6 lg:px-8">
-      Placeholder Header (cargando header.html)
-    </header>
+  <div
+    class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_20%_0%,_#F5EFE5_0%,_transparent_40%),radial-gradient(circle_at_85%_80%,_#F8FAFC_0%,_transparent_45%)]">
   </div>
+  <header class="border-b border-stone-300/70 bg-white/70 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+      <a href="index.html" class="text-xl font-bold tracking-wide">Maison Atelier</a>
+      <nav aria-label="Navegacion principal">
+        <ul class="flex items-center gap-6 text-sm font-medium">
+          <li><a href="index.html" class="hover:text-[var(--brand-red)]">Home</a></li>
+          <li><a href="catalogo.html" class="hover:text-[var(--brand-red)]">Catalogo</a></li>
+          <li><a href="carrito.html" class="hover:text-[var(--brand-red)]">Carrito</a></li>
+          <li><a href="checkout.html" class="hover:text-[var(--brand-red)]">Checkout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <div class="mx-auto flex min-h-[calc(100vh-180px)] max-w-6xl flex-col px-4 py-4 sm:px-6 lg:px-8">
 
@@ -54,26 +60,70 @@
         <div class="mb-4 flex items-start justify-between gap-4">
           <div>
             <h1 class="font-editorial text-3xl font-bold tracking-tight sm:text-4xl">Carrito completo</h1>
-            <p class="text-sm text-slate-600">Selecciona productos reales del mismo catalogo compartido o ve a la vista completa.</p>
+            <p class="text-sm text-slate-600">Maqueta estatica del carrito para presentacion visual.</p>
           </div>
           <div class="flex items-center gap-2">
-            <a href="catalogo.html" class="rounded-lg border border-[#D1D5DB] bg-white px-3 py-1 text-xs font-semibold text-[var(--brand-ink)] transition hover:border-[var(--brand-gold)] hover:bg-[var(--brand-sand)]">Ir a catalogo</a>
-            <span class="rounded-full bg-[var(--brand-sand)] px-3 py-1 text-xs font-semibold text-[var(--brand-red)]" id="badgeItems">0 items</span>
+            <a href="catalogo.html"
+              class="rounded-lg border border-[#D1D5DB] bg-white px-3 py-1 text-xs font-semibold text-[var(--brand-ink)] transition hover:border-[var(--brand-gold)] hover:bg-[var(--brand-sand)]">Ir
+              a catalogo</a>
+            <span class="rounded-full bg-[var(--brand-sand)] px-3 py-1 text-xs font-semibold text-[var(--brand-red)]">3
+              items</span>
           </div>
         </div>
 
-        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" id="catalogo"></div>
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-xl border border-slate-200 bg-white p-3">
+            <h2 class="text-sm font-semibold">Pantalon Cannes</h2>
+            <p class="mt-1 text-xs text-slate-600">EUR 95 x 1</p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white p-3">
+            <h2 class="text-sm font-semibold">Bolso Marais</h2>
+            <p class="mt-1 text-xs text-slate-600">EUR 120 x 1</p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white p-3">
+            <h2 class="text-sm font-semibold">Camisa Nice</h2>
+            <p class="mt-1 text-xs text-slate-600">EUR 79 x 1</p>
+          </article>
+        </div>
       </section>
 
       <section class="grid gap-4 lg:grid-cols-3">
         <article class="rounded-2xl border border-[#E5E7EB] bg-white p-4 shadow-sm sm:p-6 lg:col-span-2">
           <div class="mb-4 flex items-center justify-between">
             <h2 class="font-editorial text-2xl font-bold">Productos añadidos</h2>
-            <button id="vaciarCarrito" type="button" class="rounded-lg border border-[#D1D5DB] px-3 py-2 text-xs font-semibold text-[var(--brand-ink)] transition hover:border-[var(--brand-gold)] hover:bg-[var(--brand-sand)]">Vaciar carrito</button>
+            <span class="rounded-lg border border-[#D1D5DB] px-3 py-2 text-xs font-semibold text-slate-500">Prototipo
+              estatico</span>
           </div>
 
-          <div class="space-y-3" id="listaCarrito"></div>
-          <p id="carritoVacio" class="hidden rounded-xl bg-[var(--surface-muted)] p-4 text-sm text-slate-600">Aun no has anadido productos. Usa los botones del bloque superior.</p>
+          <div class="space-y-3">
+            <article class="rounded-xl border border-slate-200 bg-[var(--surface-muted)] p-4">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <h3 class="font-semibold">Pantalon Cannes</h3>
+                  <p class="text-sm text-slate-600">Talla M · Color arena</p>
+                </div>
+                <p class="font-bold">EUR 95</p>
+              </div>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-[var(--surface-muted)] p-4">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <h3 class="font-semibold">Bolso Marais</h3>
+                  <p class="text-sm text-slate-600">Cuero negro · Herrajes dorados</p>
+                </div>
+                <p class="font-bold">EUR 120</p>
+              </div>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-[var(--surface-muted)] p-4">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <h3 class="font-semibold">Camisa Nice</h3>
+                  <p class="text-sm text-slate-600">Algodon premium · Talla L</p>
+                </div>
+                <p class="font-bold">EUR 79</p>
+              </div>
+            </article>
+          </div>
         </article>
 
         <aside class="h-fit rounded-2xl border border-[#E5E7EB] bg-[var(--brand-sand)]/50 p-4 shadow-sm sm:p-6">
@@ -81,37 +131,71 @@
           <dl class="space-y-3 text-sm">
             <div class="flex items-center justify-between">
               <dt class="text-slate-600">Subtotal</dt>
-              <dd class="font-semibold" id="subtotal">0,00 €</dd>
+              <dd class="font-semibold">294,00 EUR</dd>
             </div>
             <div class="flex items-center justify-between">
               <dt class="text-slate-600">Impuestos (21%)</dt>
-              <dd class="font-semibold" id="impuestos">0,00 €</dd>
+              <dd class="font-semibold">61,74 EUR</dd>
             </div>
             <div class="border-t border-slate-200 pt-3 text-base">
               <div class="flex items-center justify-between">
                 <dt class="font-bold">Total</dt>
-                <dd class="font-black text-[var(--brand-red)]" id="total">0,00 €</dd>
+                <dd class="font-black text-[var(--brand-red)]">355,74 EUR</dd>
               </div>
             </div>
           </dl>
 
-          <button id="comprarBtn" type="button" class="mt-5 w-full rounded-xl bg-[var(--brand-red)] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#9F3525] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-gold)]">
-            Comprar
-          </button>
+          <a href="checkout.html"
+            class="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-[var(--brand-red)] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#9F3525]">
+            Ir a checkout
+          </a>
         </aside>
       </section>
     </main>
 
   </div>
 
-  <div id="footerMount" data-include="footer.html" class="mt-auto border-t border-[#E5E7EB] bg-white/70">
-    <footer class="mx-auto max-w-6xl px-4 py-4 text-center text-sm text-slate-500 sm:px-6 lg:px-8">
-      Placeholder Footer (cargando footer.html)
-    </footer>
-  </div>
-
-  <script src="layout.js" defer></script>
-  <script src="productos.js" defer></script>
-  <script src="carrito.js" defer></script>
+  <footer class="border-t border-slate-200 bg-white" itemscope itemtype="https://schema.org/WPFooter">
+    <div class="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 sm:grid-cols-2 lg:grid-cols-4 sm:px-6 lg:px-8">
+      <section>
+        <h2 class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Categorias</h2>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li><a href="#" class="hover:text-[var(--brand-red)]">Calzado</a></li>
+          <li><a href="#" class="hover:text-[var(--brand-red)]">Camisas</a></li>
+          <li><a href="#" class="hover:text-[var(--brand-red)]">Pantalones</a></li>
+          <li><a href="#" class="hover:text-[var(--brand-red)]">Accesorios</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Legal</h2>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li><a href="#" class="hover:text-[var(--brand-red)]">Terminos y condiciones</a></li>
+          <li><a href="#" class="hover:text-[var(--brand-red)]">Politica de privacidad</a></li>
+          <li><a href="#" class="hover:text-[var(--brand-red)]">Sobre la marca</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Contacto</h2>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>Email: hola@maisonatelier.fr</li>
+          <li>Paris, Francia</li>
+          <li>+33 1 23 45 67 89</li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Navegacion</h2>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li><a href="index.html" class="hover:text-[var(--brand-red)]">Home</a></li>
+          <li><a href="catalogo.html" class="hover:text-[var(--brand-red)]">Catalogo</a></li>
+          <li><a href="carrito.html" class="hover:text-[var(--brand-red)]">Carrito</a></li>
+          <li><a href="checkout.html" class="hover:text-[var(--brand-red)]">Checkout</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="border-t border-slate-200 py-4 text-center text-xs text-slate-500">
+      <p>2026 Maison Atelier. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 </body>
+
 </html>
