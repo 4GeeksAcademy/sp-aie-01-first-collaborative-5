@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Maison Atelier</title>
+  <meta name="description"
+    content="Checkout de Maison Atelier en 3 pasos: datos personales, direccion de entrega y pago con tarjeta.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://maison-atelier.example/checkout.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    :root {
+      --brand-ink: #111827;
+      --brand-sand: #F5EFE5;
+      --brand-red: #C2412D;
+      --brand-gold: #B48B46;
+      --surface-white: #FFFFFF;
+      --surface-muted: #F8FAFC;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+    }
+
+    .font-editorial {
+      font-family: "Playfair Display", serif;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-[var(--surface-white)] text-[var(--brand-ink)]">
+  <div
+    class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_15%_10%,_#F8FAFC_0%,_transparent_35%),radial-gradient(circle_at_90%_80%,_#F5EFE5_0%,_transparent_45%)]">
+  </div>
+  <header class="border-b border-stone-300/70 bg-white/70 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+      <a href="index.html" class="text-xl font-bold tracking-wide">Maison Atelier</a>
+      <nav aria-label="Navegacion principal">
+        <ul class="flex items-center gap-6 text-sm font-medium">
+          <li><a href="index.html" class="hover:text-[var(--brand-red)]">Home</a></li>
+          <li><a href="catalogo.html" class="hover:text-[var(--brand-red)]">Catalogo</a></li>
+          <li><a href="carrito.html" class="hover:text-[var(--brand-red)]">Carrito</a></li>
+          <li><a href="checkout.html" class="hover:text-[var(--brand-red)]">Checkout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto flex min-h-[calc(100vh-180px)] max-w-6xl flex-col px-4 py-4 sm:px-6 lg:px-8">
+
+    <main class="flex-1 pb-6">
+      <section class="grid gap-4 lg:grid-cols-3">
+        <article class="rounded-2xl border border-[#E5E7EB] bg-white p-4 shadow-sm sm:p-6 lg:col-span-2">
+          <h1 class="font-editorial text-3xl font-bold tracking-tight sm:text-4xl">Finalizar compra</h1>
+          <p class="mt-1 text-sm text-slate-600">Prototipo de checkout estatico sin validaciones ni pasos dinamicos.</p>
+
+          <ol class="mt-5 grid grid-cols-3 gap-2 text-xs sm:text-sm">
+            <li class="rounded-lg bg-[#C2412D] px-2 py-2 text-center font-semibold text-white">1. Datos personales</li>
+            <li class="rounded-lg bg-[#C2412D] px-2 py-2 text-center font-semibold text-white">2. Entrega</li>
+            <li class="rounded-lg bg-[#C2412D] px-2 py-2 text-center font-semibold text-white">3. Tarjeta</li>
+          </ol>
+
+          <form class="mt-5 space-y-5" action="#" method="post">
+
+            <fieldset class="space-y-4">
+              <legend class="font-editorial mb-1 text-xl font-bold">Datos personales</legend>
+              <div class="grid gap-3 sm:grid-cols-2">
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">Nombre</span>
+                  <input name="nombre" autocomplete="given-name"
+                    class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400"
+                    placeholder="Tu nombre">
+                </label>
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">Apellidos</span>
+                  <input name="apellidos" autocomplete="family-name"
+                    class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400"
+                    placeholder="Tus apellidos">
+                </label>
+              </div>
+
+              <label class="block">
+                <span class="mb-1 block text-sm font-medium">Email</span>
+                <input type="email" name="email" autocomplete="email"
+                  class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400"
+                  placeholder="tu@email.com">
+              </label>
+
+              <label class="block">
+                <span class="mb-1 block text-sm font-medium">Teléfono</span>
+                <input type="tel" name="telefono" autocomplete="tel"
+                  class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400"
+                  placeholder="600123123">
+              </label>
+            </fieldset>
+
+            <fieldset class="space-y-4">
+              <legend class="font-editorial mb-1 text-xl font-bold">Direccion de entrega</legend>
+
+              <label class="block">
+                <span class="mb-1 block text-sm font-medium">Dirección</span>
+                <input name="direccion" autocomplete="street-address"
+                  class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400"
+                  placeholder="Calle y numero">
+              </label>
+
+              <div class="grid gap-3 sm:grid-cols-2">
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">Ciudad</span>
+                  <input name="ciudad" autocomplete="address-level2"
+                    class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400"
+                    placeholder="Ciudad">
+                </label>
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">Provincia</span>
+                  <input name="provincia" autocomplete="address-level1"
+                    class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400"
+                    placeholder="Provincia">
+                </label>
+              </div>
+
+              <div class="grid gap-3 sm:grid-cols-2">
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">Codigo postal</span>
+                  <input name="cp" autocomplete="postal-code"
+                    class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400"
+                    placeholder="28001">
+                </label>
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">País</span>
+                  <input name="pais" autocomplete="country-name"
+                    class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400"
+                    placeholder="Espana">
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="space-y-4">
+              <legend class="font-editorial mb-1 text-xl font-bold">Pago con tarjeta</legend>
+
+              <label class="block">
+                <span class="mb-1 block text-sm font-medium">Titular de la tarjeta</span>
+                <input name="titular" autocomplete="cc-name"
+                  class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400"
+                  placeholder="Nombre como aparece en la tarjeta">
+              </label>
+
+              <label class="block">
+                <span class="mb-1 block text-sm font-medium">Número de tarjeta</span>
+                <input inputmode="numeric" name="numeroTarjeta" autocomplete="cc-number"
+                  class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400"
+                  placeholder="1234123412341234">
+              </label>
+
+              <div class="grid gap-3 sm:grid-cols-2">
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">Caducidad (MM/AA)</span>
+                  <input name="caducidad" autocomplete="cc-exp"
+                    class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400"
+                    placeholder="08/29">
+                </label>
+                <label class="block">
+                  <span class="mb-1 block text-sm font-medium">CVV</span>
+                  <input name="cvv" autocomplete="cc-csc"
+                    class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-cyan-400"
+                    placeholder="123">
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="flex flex-wrap gap-2 pt-1">
+              <button type="submit"
+                class="rounded-lg bg-[var(--brand-red)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#9F3525]">Pagar
+                ahora</button>
+            </div>
+
+            <p class="text-sm text-slate-500">Este formulario es visual y no envia datos reales.</p>
+          </form>
+        </article>
+
+        <aside class="h-fit rounded-2xl border border-[#E5E7EB] bg-[var(--brand-sand)]/50 p-4 shadow-sm sm:p-6"
+          itemscope itemtype="https://schema.org/Order">
+          <h2 class="font-editorial text-2xl font-bold">Resumen del pedido</h2>
+          <div class="mt-4 space-y-3">
+            <article class="rounded-xl border border-slate-200 bg-white p-3 text-sm">
+              <div class="flex items-center justify-between">
+                <span>Pantalon Cannes</span>
+                <span class="font-semibold">EUR 95</span>
+              </div>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-white p-3 text-sm">
+              <div class="flex items-center justify-between">
+                <span>Bolso Marais</span>
+                <span class="font-semibold">EUR 120</span>
+              </div>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-white p-3 text-sm">
+              <div class="flex items-center justify-between">
+                <span>Camisa Nice</span>
+                <span class="font-semibold">EUR 79</span>
+              </div>
+            </article>
+          </div>
+
+          <dl class="mt-4 space-y-2 border-t border-slate-200 pt-3 text-sm">
+            <div class="flex items-center justify-between">
+              <dt class="text-slate-600">Subtotal</dt>
+              <dd class="font-semibold">294,00 EUR</dd>
+            </div>
+            <div class="flex items-center justify-between">
+              <dt class="text-slate-600">Impuestos (21%)</dt>
+              <dd class="font-semibold">61,74 EUR</dd>
+            </div>
+            <div class="flex items-center justify-between border-t border-slate-200 pt-2 text-base">
+              <dt class="font-bold">Total</dt>
+              <dd class="font-black text-[var(--brand-red)]">355,74 EUR</dd>
+            </div>
+          </dl>
+
+          <a href="carrito.html"
+            class="mt-5 inline-flex w-full items-center justify-center rounded-lg border border-[#D1D5DB] px-4 py-2 text-sm font-semibold text-[var(--brand-ink)] transition hover:border-[var(--brand-gold)] hover:bg-[var(--brand-sand)]">Volver
+            al carrito</a>
+        </aside>
+      </section>
+    </main>
+
+  </div>
+
+  <footer class="border-t border-slate-200 bg-white" itemscope itemtype="https://schema.org/WPFooter">
+    <div class="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 sm:grid-cols-2 lg:grid-cols-4 sm:px-6 lg:px-8">
+      <section>
+        <h2 class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Categorias</h2>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li><a href="#" class="hover:text-[var(--brand-red)]">Calzado</a></li>
+          <li><a href="#" class="hover:text-[var(--brand-red)]">Camisas</a></li>
+          <li><a href="#" class="hover:text-[var(--brand-red)]">Pantalones</a></li>
+          <li><a href="#" class="hover:text-[var(--brand-red)]">Accesorios</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Legal</h2>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li><a href="#" class="hover:text-[var(--brand-red)]">Terminos y condiciones</a></li>
+          <li><a href="#" class="hover:text-[var(--brand-red)]">Politica de privacidad</a></li>
+          <li><a href="#" class="hover:text-[var(--brand-red)]">Sobre la marca</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Contacto</h2>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>Email: hola@maisonatelier.fr</li>
+          <li>Paris, Francia</li>
+          <li>+33 1 23 45 67 89</li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Navegacion</h2>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li><a href="index.html" class="hover:text-[var(--brand-red)]">Home</a></li>
+          <li><a href="catalogo.html" class="hover:text-[var(--brand-red)]">Catalogo</a></li>
+          <li><a href="carrito.html" class="hover:text-[var(--brand-red)]">Carrito</a></li>
+          <li><a href="checkout.html" class="hover:text-[var(--brand-red)]">Checkout</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="border-t border-slate-200 py-4 text-center text-xs text-slate-500">
+      <p>2026 Maison Atelier. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
