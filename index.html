@@ -61,7 +61,7 @@
             "url": "https://maison-atelier.example.com",
             "potentialAction": {
               "@type": "SearchAction",
-              "target": "https://maison-atelier.example.com/index.html?q={search_term_string}",
+              "target": "https://maison-atelier.example.com/catalogo.html?q={search_term_string}",
               "query-input": "required name=search_term_string"
             }
           }
@@ -81,7 +81,7 @@
           </button>
         </div>
         <div class="grid gap-3 lg:grid-cols-[1fr_auto] lg:items-center">
-          <form role="search" action="index.html" method="get" class="relative" aria-label="Busqueda de productos">
+          <form role="search" action="catalogo.html" method="get" class="relative" aria-label="Busqueda de productos">
             <label for="search" class="sr-only">Buscar productos</label>
             <input
               id="search"
@@ -92,7 +92,7 @@
             />
           </form>
           <nav aria-label="Cuenta y navegacion principal" class="hidden items-center gap-2 lg:flex" itemscope itemtype="https://schema.org/SiteNavigationElement">
-            <a href="#new-releases-title" class="rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-amber-50">Novedades</a>
+            <a href="catalogo.html" class="rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-amber-50">Catalogo</a>
             <a href="#best-sellers-title" class="rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-amber-50">Mas vendidos</a>
             <a href="#newsletter" class="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-700">Suscribete</a>
           </nav>
@@ -111,7 +111,7 @@
                 Descubre prendas de edicion limitada con cortes limpios, textiles premium y una paleta inspirada en la Riviera francesa.
               </p>
               <div class="flex flex-wrap items-center gap-3">
-                <a href="#new-releases-title" class="rounded-full bg-[var(--brand-red)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700">Explorar novedades</a>
+                <a href="catalogo.html" class="rounded-full bg-[var(--brand-red)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700">Ir al catalogo</a>
                 <a href="#best-sellers-title" class="rounded-full border border-slate-900 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-900 hover:text-white">Ver mas vendidos</a>
               </div>
             </div>
@@ -142,7 +142,7 @@
       <section class="mx-auto mt-12 w-full max-w-7xl px-4 sm:px-6 lg:px-8" aria-labelledby="new-releases-title">
         <div class="mb-5 flex items-center justify-between gap-4">
           <h2 id="new-releases-title" class="text-3xl text-slate-900">Nuevos lanzamientos</h2>
-          <a href="#best-sellers-title" class="text-sm font-semibold text-amber-800 underline decoration-amber-700/60 underline-offset-4">Ir a mas vendidos</a>
+          <a href="catalogo.html" class="text-sm font-semibold text-amber-800 underline decoration-amber-700/60 underline-offset-4">Ver catalogo completo</a>
         </div>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" itemscope itemtype="https://schema.org/ItemList">
           <article class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
